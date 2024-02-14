@@ -1,3 +1,18 @@
+### Запуск проекта
+1. с использованием Docker
+в терминале в папке, где файл docker-compose.yml:
+docker compose up
+
+2. без Docker - в файле settings.py заменить
+CELERY_BROKER_URL
+CELERY_RESULT_BACKEND
+
+pip install requirements.txt
+в трех терминалах в папке file_upload:
+redis-server
+celery -A file_upload worker -l INFO
+python manage.py runserver
+
 ## Задание:
 Разработать Django REST API, который позволяет загружать файлы на сервер,
 а затем асинхронно обрабатывать их с использованием Celery.
