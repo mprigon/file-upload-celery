@@ -9,8 +9,11 @@ CELERY_RESULT_BACKEND
 
 pip install requirements.txt
 в трех терминалах в папке file_upload:
+
 redis-server
+
 celery -A file_upload worker -l INFO
+
 python manage.py runserver
 
 ## Задание:
